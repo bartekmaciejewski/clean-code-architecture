@@ -19,3 +19,11 @@ Postman collection file is located at `./.dev/postman.json`. Import it into your
 
 ## Tests
 `docker-compose exec app bin/phpunit`
+
+## Troubleshooting
+On Win10 running commands: `docker-compose exec app bin/console d:s:c` and `docker-compose exec app bin/phpunit` resulted in:
+/usr/bin/env: ‘php\r’: No such file or directory
+
+Added `php` to command has helped:
+  `docker-compose exec app php bin/console d:s:c`
+  `docker-compose exec app php bin/phpunit`
